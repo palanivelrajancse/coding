@@ -31,7 +31,7 @@ class Education_det extends CI_Controller{
 	'univerity1' => $this->input->post('university'),
 	'degree1' => $this->input->post('degree1'),
 	'discipline1' => $this->input->post('discipline1'),
-	'yearcomple1' => $this->input->post('yearcomple1')	
+	
 	);
 	
 	
