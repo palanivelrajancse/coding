@@ -1,0 +1,42 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+class Education_det extends CI_Controller{
+    public function edu(){
+
+	$this->load->view('education');
+	$this->load->database();
+	
+    }
+
+	public function submit()
+	{
+	$this->load->model('Education_mod');	
+	$data = array(
+	'sper' => $this->input->post('sper'),
+	'sssc' => $this->input->post('sssc'),
+	'syear' => $this->input->post('syear'),
+	'hper' => $this->input->post('hper'),
+	'hhsc' => $this->input->post('hhsc'),
+	'hyear' => $this->input->post('hyear'),
+	'grade' => $this->input->post('grade'),
+	'percentage' => $this->input-post('percentage'),
+	'percen' => $this->input->post('percen'),
+	'university' => $this->input->post('university'),
+	'degree' => $this->input->post('degree'),
+	'discipline' => $this->input->post('discipline'),
+	'yearcomple' => $this->input->post('yearcomple'),
+	'grade1' => $this->input->post('grade1'),
+	'percentage1' => $this->input->post('percentage'),
+	'percen1' => $this->input->post('percen1'),
+	'univerity1' => $this->input->post('university'),
+	'degree1' => $this->input->post('degree1'),
+	'discipline1' => $this->input->post('discipline1'),
+	'yearcomple1' => $this->input->post('yearcomple1')	
+	);
+	
+	
+	$this->education_mod->edudb($data);
+	 	
+	}
+}
+?>
