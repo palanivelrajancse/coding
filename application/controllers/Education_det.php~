@@ -10,7 +10,7 @@ class Education_det extends CI_Controller{
 
 	public function submit()
 	{
-	$this->load->model('education_mod');	
+	$this->load->model('Education_mod');	
 	$data = array(
 	'sper' => $this->input->post('sper'),
 	'sssc' => $this->input->post('sssc'),
@@ -31,7 +31,7 @@ class Education_det extends CI_Controller{
 	'univerity1' => $this->input->post('university'),
 	'degree1' => $this->input->post('degree1'),
 	'discipline1' => $this->input->post('discipline1'),
-	'yearcomple1' => $this->input->post('yearcomple1')	
+	
 	);
 	
 	
