@@ -1,14 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Education_det extends CI_Controller{
-    public function edu(){
+    public function index(){
 
 	$this->load->view('education');
 	$this->load->database();
 	
-    }
-
-	public function submit()
+	if($this->input->post('datasubmit'))
 	{
 	$this->load->model('Education_mod');	
 	$data = array(
@@ -19,7 +17,7 @@ class Education_det extends CI_Controller{
 	'hhsc' => $this->input->post('hhsc'),
 	'hyear' => $this->input->post('hyear'),
 	'grade' => $this->input->post('grade'),
-	'percentage' => $this->input-post('percentage'),
+	'percentage' => $this->input->post('percentage'),
 	'percen' => $this->input->post('percen'),
 	'university' => $this->input->post('university'),
 	'degree' => $this->input->post('degree'),
@@ -31,12 +29,12 @@ class Education_det extends CI_Controller{
 	'univerity1' => $this->input->post('university'),
 	'degree1' => $this->input->post('degree1'),
 	'discipline1' => $this->input->post('discipline1'),
-	
 	);
 	
-	
 	$this->education_mod->edudb($data);
-	 	
+	$data['message'] = 'Data Inserted';
+	$this->load->view('education',$data);
+	} 	
 	}
 }
 ?>
