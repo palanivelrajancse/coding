@@ -6,6 +6,9 @@ public function index(){
 $this->load->view('Institute_selection');
 
 $checked = $this->input->post('course');
+
+if($this->input->post('datasubmit'))
+{
 if(!empty($checked))
 	{
 
@@ -68,9 +71,12 @@ if(!empty($checked))
 						}
 
 	}
+else
+{
+	echo "Please select the institute";
+}
+}
 }
 
 }
-
-
 ?>
