@@ -5,36 +5,37 @@ class Education_det extends CI_Controller{
 
 	$this->load->view('education');
 	$this->load->database();
-	
+
 	if($this->input->post('datasubmit'))
 	{
-	$this->load->model('Education_mod');	
+	$this->load->model('Education_mod');
 	$data = array(
-	'sper' => $this->input->post('sper'),
-	'sssc' => $this->input->post('sssc'),
-	'syear' => $this->input->post('syear'),
-	'hper' => $this->input->post('hper'),
-	'hhsc' => $this->input->post('hhsc'),
-	'hyear' => $this->input->post('hyear'),
-	'grade' => $this->input->post('grade'),
-	'percentage' => $this->input->post('percentage'),
-	'percen' => $this->input->post('percen'),
+	'sscper' => $this->input->post('sper'),
+	'sscboard' => $this->input->post('sssc'),
+	'sscyear' => $this->input->post('syear'),
+	'hscper' => $this->input->post('hper'),
+	'hscboard' => $this->input->post('hhsc'),
+	'hscyear' => $this->input->post('hyear'),
+	'degreeclass' => $this->input->post('grade'),
+	'marktype' => $this->input->post('percentage'),
+	'degreeper' => $this->input->post('percen'),
 	'university' => $this->input->post('university'),
-	'degree' => $this->input->post('degree'),
-	'discipline' => $this->input->post('discipline'),
-	'yearcomple' => $this->input->post('yearcomple'),
-	'grade1' => $this->input->post('grade1'),
-	'percentage1' => $this->input->post('percentage'),
-	'percen1' => $this->input->post('percen1'),
-	'univerity1' => $this->input->post('university'),
-	'degree1' => $this->input->post('degree1'),
-	'discipline1' => $this->input->post('discipline1'),
+	'degreename' => $this->input->post('degree'),
+	'displine' => $this->input->post('discipline'),
+	'degreeyear' => $this->input->post('yearcomple'),
+	'degreeclass1' => $this->input->post('grade1'),
+	'marktype1' => $this->input->post('percentage'),
+	'degreeper1' => $this->input->post('percen1'),
+	'university1' => $this->input->post('university1'),
+	'degreename1' => $this->input->post('degree1'),
+	'displine1' => $this->input->post('discipline1'),
+  'degreeyear1' => $this->input->post('yearcomple1')
 	);
-	
-	$this->education_mod->edudb($data);
+
+	$this->Education_mod->edudb($data);
 	$data['message'] = 'Data Inserted';
 	$this->load->view('education',$data);
-	} 	
+	}
 	}
 }
 ?>
